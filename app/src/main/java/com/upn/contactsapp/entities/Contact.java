@@ -23,7 +23,11 @@ public class Contact {
 
     @ColumnInfo(name = "image_path")
     public String imagePath;
+    public String uuid;
 
+    public Contact(){
+
+    }
     public Contact(String name, String phone) {
         this.name = name;
         this.phone = phone;
