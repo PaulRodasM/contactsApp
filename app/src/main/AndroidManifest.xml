@@ -21,22 +21,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ContactsApp"
         tools:targetApi="31">
-
         <activity
+<<<<<<< HEAD
             android:name=".activities.FirebaseActivity"
             android:exported="true">
+=======
+            android:name=".FirebaseActivity"
+            android:exported="true" >
+>>>>>>> 3a960b613938b3fa4dd585efa37558f6dd76bd27
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.CrearComentarioActivity"
+<<<<<<< HEAD
             android:exported="true" />
         <activity
             android:name=".activities.IssueActivity"
             android:exported="true" />
+=======
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".activities.IssueActivity"
+            android:exported="true"></activity>
+>>>>>>> 3a960b613938b3fa4dd585efa37558f6dd76bd27
         <activity
             android:name=".activities.LoginActivity"
             android:exported="true" />
