@@ -1,43 +1,32 @@
 plugins {
     id 'com.android.application'
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
     namespace 'com.upn.contactsapp'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.upn.contactsapp"
         minSdk 27
-        targetSdk 33
+        targetSdk 34  // Asegúrate de que esté en 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
     buildFeatures {
-        viewBinding true
+        viewBinding true // Esto habilita View Binding
     }
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'androidx.annotation:annotation-jvm:1.9.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -47,7 +36,16 @@ dependencies {
 
     implementation 'com.dropbox.core:dropbox-core-sdk:5.4.0'
 
-    implementation "androidx.room:room-runtime:2.5.1"
-    annotationProcessor "androidx.room:room-compiler:2.5.1"
+    implementation "androidx.room:room-runtime:2.6.1"
+    annotationProcessor "androidx.room:room-compiler:2.6.1"
+
+    // Dependencias de Firebase
+    implementation 'com.google.firebase:firebase-database:20.0.6'
+    implementation 'com.google.firebase:firebase-core:21.0.0'
+    implementation 'androidx.annotation:annotation:1.9.1'
+    implementation 'androidx.annotation:annotation-jvm:1.9.1'
 
 }
+
+// Asegúrate de que el plugin de Google Services esté al final
+apply plugin: 'com.google.gms.google-services'
